@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <img alt="Vue logo" src="../../src/assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
   <button @click="openNewWin">window</button>
 </template>
@@ -8,6 +8,7 @@
 import { defineComponent } from 'vue'
 import HelloWorld from '../components/HelloWorld.vue'
 import { createWin } from './utils/window'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'App',
@@ -15,6 +16,7 @@ export default defineComponent({
     HelloWorld
   },
   setup() {
+    const router = useRouter()
     const openNewWin = () => {
       createWin("about")
     }

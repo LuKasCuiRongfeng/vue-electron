@@ -1,14 +1,17 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import esm2cjs from './plugins/vitejs-plugin-electron'
-import { join } from 'path'
+const { join } = require('path')
 const dotenv = require('dotenv')
 
 dotenv.config({ path: join(__dirname, ".env") })
 const root = join(__dirname, "src/render")
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), esm2cjs()],
+  plugins: [
+    vue(),
+    // esm2cjs()
+  ],
   root,
   base: "./",
   server: {

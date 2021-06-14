@@ -1,4 +1,5 @@
 import { ipcRenderer } from 'electron'
+// const { ipcRenderer } = window.require('electron')
 import { WinOpts } from '../../main/window'
 
 

@@ -19,9 +19,9 @@ function createWin(key: string, winOpts?: WinOpts) {
     win = new BrowserWindow({ ...defaultOpts, ...winOpts })
     let url = app.isPackaged
         ? `file://${join(__dirname, '../render/index.html#/' + key)}`
-        : `http://localhost:${process.env.PORT}/${key}`
+        : `http://localhost:${process.env.PORT}`
     win.loadURL(url)
-    global.win[key] = win
+    // global.win[key] = win
 }
 
 export {
