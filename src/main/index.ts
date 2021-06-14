@@ -1,7 +1,6 @@
 import { join } from 'path'
 import { app, BrowserWindow, ipcMain } from 'electron'
 import dotenv from 'dotenv'
-import { createWin as _createWin, WinOpts } from './window'
 
 dotenv.config({ path: join(__dirname, '../../.env') })
 
@@ -24,12 +23,6 @@ function createWin() {
     : `http://localhost:${process.env.PORT}` // vite 启动的服务器地址
 
   win?.loadURL(URL)
-  global.win["main"] = win
-  console.log(222, global.win)
 }
 
 app.whenReady().then(createWin)
-
-ipcMain.on("openWin", (e, arg) => {
-  _createWin(arg.key, arg.winOpts)
-})

@@ -7,7 +7,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import HelloWorld from '../components/HelloWorld.vue'
-import { createWin } from './utils/window'
 import { useRouter } from 'vue-router'
 
 export default defineComponent({
@@ -18,7 +17,6 @@ export default defineComponent({
   setup() {
     const router = useRouter()
     const openNewWin = () => {
-      createWin("about")
     }
     return {
       openNewWin
